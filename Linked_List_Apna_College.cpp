@@ -17,6 +17,15 @@ class node
     }
 };
 
+// Insert At Head
+
+void insertAtHead(node* &head,int val)
+{
+    node* n=new node(val);
+    n->next=head;
+    head=n;
+}
+
 // Insert Element At Tail
 
 void insertAtTail(node* &head,int val)  //* & pointer by refference
@@ -48,14 +57,7 @@ void display(node* head)
     cout<<"NULL"<<endl;
 }
 
-// Insert At Head
 
-void insertAtHead(node* &head,int val)
-{
-    node* n=new node(val);
-    n->next=head;
-    head=n;
-}
 
 // Seraching  At Linked List
 
@@ -76,12 +78,13 @@ string Search(node* head,int key)
 int main()
 {
     
-    node* head =NULL;
-    insertAtTail(head,12);
+    node* head;
+    insertAtHead(head,345);
+    insertAtTail(head,123);
     insertAtTail(head,178);
     insertAtTail(head,1788);
     display(head);
-    insertAtHead(head,345);
+    
     display(head);
     cout<<Search(head,178)<<endl;
     cout<<Search(head,349)<<endl;
