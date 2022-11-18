@@ -25,17 +25,17 @@ class Graph
         void addedge(int src, int dest)	//Function to add edge
         {
     	
-	    Node* newNode = new Node;  
-	    newNode->data = dest;					
-            newNode->next = NULL;		
-            newNode->next = array[src].prev;		
-            array[src].prev = newNode;				
-	    newNode = new Node; 				 
-            newNode->data = src;				
-            newNode->next = NULL;				
+        Node* newNode = new Node;  
+        newNode->data = dest;					
+        newNode->next = NULL;		
+        newNode->next = array[src].prev;		
+        array[src].prev = newNode;				
+        newNode = new Node; 				 
+        newNode->data = src;				
+        newNode->next = NULL;				
 
-            newNode->next ;
-            array[dest].prev= newNode;			
+        newNode->next ;
+        array[dest].prev= newNode;			
         }
 
         void showList()		//Function to show adjacency list

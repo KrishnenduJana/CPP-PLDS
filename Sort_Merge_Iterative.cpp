@@ -55,7 +55,7 @@ void IMergeSort(int A[],int n)
 }
 int main()
 {
-    int A[]={11,5,-1114,2,6,-333,1,22222},n=sizeof(A)/sizeof(A[0]),i;
+    int A[]={11,5,-11,2,6,-33,1,22,99},n=sizeof(A)/sizeof(A[0]),i;
     IMergeSort(A, n);
     for(i=0;i<n;i++)
     cout<<A[i]<<" ";

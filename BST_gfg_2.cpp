@@ -3,40 +3,47 @@
 #include <iostream>
 using namespace std;
 
-class BST
-{
+class BST {
 	int data;
-	BST *left,
-    BST *right;
+	BST *left, *right;
 
-public:	
+public:
+	// Default constructor.
+	BST();
+
 	// Parameterized constructor.
-	BST(int value)
-    {
-        data = value;
-        left = NULL;
-        right = NULL;
-    }
+	BST(int);
 
 	// Insert function.
 	BST* Insert(BST*, int);
 
-	// Order traversal.
-    void Preorder(BST*);
+	// Inorder traversal.
 	void Inorder(BST*);
     void Postorder(BST*);
-
 };
 
-// Parameterized Constructor definition.
+// Default Constructor definition.
+BST ::BST()
+	: data(0)
+	, left(NULL)
+	, right(NULL)
+{
+}
 
+// Parameterized Constructor definition.
+BST ::BST(int value)
+{
+	data = value;
+	left = right = NULL;
+}
 
 // Insert function definition.
-BST* BST::Insert(BST* root, int value)
+BST* BST ::Insert(BST* root, int value)
 {
-	if (!root) {
+	if (root==NULL) {
 		// Insert the first node, if root is NULL.
-		return new BST(value);
+		root = new BST(value);
+		return root;
 	}
 
 	// Insert data.
@@ -61,25 +68,13 @@ BST* BST::Insert(BST* root, int value)
 
 // Inorder traversal function.
 // This gives data in sorted order.
-void BST ::Preorder(BST* root)
+void BST ::Inorder(BST* root)
 {
-	if (root==NULL)
-    {
-		return;
-	}
-	cout << root->data << endl;
-    Preorder(root->left);	
-	Preorder(root->right);
-}
-
-void BST ::Inorder(BST *root)
-{
-	if (root==NULL)
-    {
+	if (!root) {
 		return;
 	}
 	Inorder(root->left);
-	cout << root->data << endl;
+	cout << root->data << " ";
 	Inorder(root->right);
 }
 
@@ -91,9 +86,8 @@ void BST ::Postorder(BST* root)
 	}
 	Postorder(root->left);	
 	Postorder(root->right);
-    cout << root->data << endl;
+    cout << root->data << " ";
 }
-
 // Driver code
 int main()
 {
@@ -107,5 +101,7 @@ int main()
 	b.Insert(root, 80);
 
 	b.Inorder(root);
+    cout<<endl;
+    b.Postorder(root);
 	return 0;
 }

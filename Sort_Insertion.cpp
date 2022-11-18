@@ -40,16 +40,16 @@ void insertionSort(int array[], int n)
 {
     for (int i = 1; i < n; i++)
     {
-        int x = array[i];
+        int key = array[i];
         int j = i - 1;          //Shifting the index one left
         
         
-        while (array[j]>x && j >= 0)
+        while (array[j]>key && j >= 0)
         {
-            array[j + 1] = array[j];
+            array[j + 1] = array[j];    //shifting one right
             j--;
         }
-        array[j + 1] = x;
+        array[j + 1] = key;
         
     }
 }

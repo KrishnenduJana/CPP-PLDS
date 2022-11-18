@@ -31,8 +31,9 @@
       heapify(arr, n, i);
   
     // Heap sort
-    for (int i = n - 1; i >= 0; i--) {
-      swap(arr[0], arr[i]);
+    for (int i = n - 1; i >= 0; i--)
+    {
+      swap(arr[0], arr[i]); //swap a[0] and a[i]
   
     // Heapify root element to get highest element at root again
       heapify(arr, i, 0);
@@ -40,7 +41,8 @@
   }
   
   // Print an array
-  void printArray(int arr[], int n) {
+  void printArray(int arr[], int n)
+  {
     for (int i = 0; i < n; ++i)
       cout << arr[i] << " ";
     cout << "\n";

@@ -41,7 +41,7 @@ void selectionSort(int array[], int size)
     for (int step = 0; step < size - 1; step++) //Total (n-1) steps required
     {
         int min_idx = step;         //Set the first unsorted element as min
-        for (int i = step + 1; i < size; i++)   //Compare each element after (i+1) to (n-1)
+        for (int i = min_idx + 1; i < size; i++)   //Compare each element after (i+1) to (n-1)
         {
             if (array[min_idx] > array[i])
             min_idx = i;            //if above minimum satisfy then set the index as min index
